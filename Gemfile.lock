@@ -1,16 +1,10 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    macaddr (1.6.7)
-      systemu (~> 2.6.2)
-    ruby-growl (4.1)
-      uuid (~> 2.3, >= 2.3.5)
-    systemu (2.6.4)
-    uuid (2.3.7)
-      macaddr (~> 1.0)
+    ruby-audio (1.6.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  ruby-growl
+  ruby-audio
