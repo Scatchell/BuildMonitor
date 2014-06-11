@@ -2,7 +2,7 @@ require 'rss'
 require 'open-uri'
 
 class RSSHealth
-    URL = 'http://dhdb2bbld02.discsrv.co.za:8080/job/B2B-hospital-auths-mediclinic-outgoing-develop/rssAll'
+    URL = 'http://dhdb2bbld02.discsrv.co.za:8080/job/B2B-hospital-auths-hb-incoming-develop/rssAll'
 
     def self.broken?
         open(URL) do |rss|
