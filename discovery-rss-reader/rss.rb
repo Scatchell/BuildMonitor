@@ -9,7 +9,7 @@ class RSSHealth
             feed = RSS::Parser.parse(rss)
 
             return nil if feed.items.nil?
-            return feed.items.first.title.to_s.include? 'broken'
+            return feed.items.first.title.to_s.include?('broken') || feed.items.first.title.to_s.include?('unstable')
         end
     end
 
