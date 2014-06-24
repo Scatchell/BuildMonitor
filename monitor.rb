@@ -9,22 +9,22 @@ RED_URL='http://www.zingerbug.com/Backgrounds/background_images/airstrip_explosi
 
 while true
 	begin
-if(!RSSHealth.build_num.nil? && RSSHealth.build_num != last_build_num)
-	build_num = RSSHealth.build_num
-	puts 'build #' + build_num + ' is ' + (RSSHealth.broken? ? 'broken' : 'good, no problems') + ' at ' + Time.now.to_s
-	if RSSHealth.broken?
-		`firefox #{RED_URL}`
-		`play ~/Downloads/fail-trombone-03.wav`
-	else
-		`firefox #{GREEN_URL}`
-	end
+		if(!RSSHealth.build_num.nil? && RSSHealth.build_num != last_build_num)
+			build_num = RSSHealth.build_num
+			puts 'build #' + build_num + ' is ' + (RSSHealth.broken? ? 'broken' : 'good, no problems') + ' at ' + Time.now.to_s
+			if RSSHealth.broken?
+				`firefox #{RED_URL}`
+				`play ~/Downloads/fail-trombone-03.wav`
+			else
+				`firefox #{GREEN_URL}`
+			end
 
-	last_build_num = build_num
-	end
+			last_build_num = build_num
+		end
 	rescue SocketError
-	puts 'Socket error'
+		puts 'Socket error'
 	rescue Errno::ENETUNREACH
-	puts 'Can\'t reach server error'
+		puts 'Can\'t reach server error'
 	end
 
 sleep(10)
