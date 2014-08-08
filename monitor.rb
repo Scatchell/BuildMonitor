@@ -21,11 +21,10 @@ while true
 			else
 				if last_state != RSSHealth.broken?
 					`firefox #{GREEN_URL}`
-					if !first
+					if !last_state.nil?
 						`play ~/Downloads/smw_castle_clear.wav`
-					else
-						first  = false
 					end
+
 				end
 			end
 
